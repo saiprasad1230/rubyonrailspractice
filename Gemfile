@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
 
@@ -15,6 +16,10 @@ gem "puma", ">= 5.0"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
+
+gem 'webpacker', '~> 5.4', '>= 5.4.4'
+
+gem 'turbolinks', '~> 5'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
@@ -65,17 +70,12 @@ end
 
 group :production do
   gem 'pg', '~> 1.5', '>= 1.5.5'
-  gem 'rails_12factor'
+  #gem 'rails_12factor', '0.0.2'
 end  
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem 'webdrivers'
 end
-
-gem "rqrcode", "~> 2.2"
-
-gem "axlsx", "~> 1.3"
-
-gem "roo", "~> 2.10"
